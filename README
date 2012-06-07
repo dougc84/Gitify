@@ -1,0 +1,22 @@
+gitify is a small application to save you a few steps in the development process.
+By running gitify, you will add all new files (git add .), and commit them as well
+(git commit -am "your commit message").  By optionally adding the -p flag, it
+will perform a push (git push) as well.
+
+I was always bothered by the fact I would have to type in:
+git add .
+git commit -am "something"
+git push
+
+So I decided to bundle it into one simple command.  Enjoy.
+
+usage: gitify [-p] "your commit message"
+   -p      Pushes git repository to master"
+
+examples:
+   gitify "your commit message"
+           runs:
+           git add . && git commit -am "your commit message"
+   gitify -p "your commit message"
+           runs:
+           git add . && git commit -am "your commit message" && git push

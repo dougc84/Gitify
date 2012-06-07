@@ -1,0 +1,35 @@
+#!/bin/bash
+# gitify 1.0 by Doug Clark, www.dougclarkonline.com
+
+if [[ $# == "0" ]]; then
+	echo ""
+	echo "gitify is a small application to save you a few steps in the development process."
+	echo "By running gitify, you will add all new files (git add .), and commit them as well"
+	echo "(git commit -am \"your commit message\").  By optionally adding the -p flag, it"
+	echo "will perform a push (git push) as well."
+	echo ""
+	echo "usage: gitify [-p] \"your commit message\""
+	echo "   -p      Pushes git repository to master"
+	echo ""
+	echo "examples:"
+	echo "   gitify \"your commit message\""
+	echo "           runs:"
+	echo "           git add . && git commit -am \"your commit message\""
+	echo "   gitify -p \"your commit message\""
+	echo "           runs:"
+	echo "           git add . && git commit -am \"your commit message\" && git push"
+	echo ""
+	exit 1
+fi
+
+PUSH=""
+MESSAGE=""
+if [ "$1" == "-p" ]; then
+	MESSAGE=$2
+	git add . && git commit -am "$MESSAGE" && git push
+else
+	MESSAGE=$1
+	git add . && git commit -am "$MESSAGE"
+fi
+
+exit 0
