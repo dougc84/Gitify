@@ -1,7 +1,4 @@
-gitify is a small application to save you a few steps in the development process.
-By running gitify, you will add all new files (git add .), and commit them as well
-(git commit -am "your commit message").  By optionally adding the -p flag, it
-will perform a push (git push) as well.
+gitify is a small application to save you a few steps in the development process.  By running gitify, you will add all new files (git add .), and commit them as well (git commit -am "your commit message").  By optionally adding the -p flag, it will perform a push (git push) as well.
 
 I was always bothered by the fact I would have to type in:
 git add .
@@ -21,8 +18,7 @@ examples:
            runs:
            git add . && git commit -am "your commit message" && git push
 
-I would recommend copying or moving the gitify script to somewhere globally accessible
-(/usr/bin is a great place), and then, of course, making it executible by running:
+I would recommend copying or moving the gitify script to somewhere globally accessible (/usr/bin is a great place), and then, of course, making it executible by running:
 
 chmod +x /path/to/gitify
 
