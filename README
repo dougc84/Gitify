@@ -8,15 +8,22 @@ git push
 So I decided to bundle it into one simple command.  Enjoy.
 
 usage: gitify [-p] "your commit message"
-   -p      Pushes git repository to master"
+   -p      Pushes git repository to master
+   -fp     Flushes the .git/ cache and performs -p
 
 examples:
-   gitify "your commit message"
+   gitify "your commit message" - Add files and commit changes.
            runs:
            git add . && git commit -am "your commit message"
-   gitify -p "your commit message"
+   gitify -p "your commit message" - Add files, commit changes, and push.
            runs:
-           git add . && git commit -am "your commit message" && git push
+           git add . && git commit -am "your commit message"
+           git push
+   gitify -fp "your commit message" - Flush .git cache, and performs -p
+           runs:
+           git rm -r --cached .
+           git add . && git commit -am "your commit message"
+           git push
 
 I would recommend copying or moving the gitify script to somewhere globally accessible (/usr/bin is a great place), and then, of course, making it executible by running:
 
